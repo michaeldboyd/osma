@@ -9,8 +9,7 @@
     xmlns:components="clr-namespace:Osma.Mobile.App.Views.Components;assembly=Osma.Mobile.App"
     x:Class="Osma.Mobile.App.Views.Account.AccountPage"
     ios:Page.UseSafeArea="true"
-    Title="Account"
->
+    Title="Account">
     <ContentPage.Content>
         <StackLayout>
             <TableView HasUnevenRows="true" Intent="Menu">
@@ -20,7 +19,7 @@
                             ImageURL="{Binding AvatarUrl}"
                         />
                     </TableSection>
-                     <TableSection>
+                    <TableSection>
                         <account:AccountMenuButtonView
                             Title="Backup Your App"
                             Subtitle="Create a backup in case anything happens"
@@ -33,19 +32,25 @@
                             Image="security_icon.png"
                             TappedCommand="{Binding NavigateToAuthenticationCommand}"
                         />
-                    <account:AccountMenuButtonView
-                        Title="Legal"
-                         Subtitle="All the cool tech we're using"
-                        Image="legal_icon.png"
-                        TappedCommand="{Binding NavigateToLegalPageCommand}"
-                    />
-                    <account:AccountMenuButtonView
-                        Title="{Binding AppVersion, StringFormat='Version: {0}'}"
-                        Subtitle="{Binding BuildVersion, StringFormat='Build: {0}'}"
-                        Image="info_icon.png"
-                        TappedCommand="{Binding NavigateToDebugCommand}"
-                        NumberOfTapsRequired="8"
-                    />
+                        <account:AccountMenuButtonView
+                            Title="Enable Sovrin Token Support"
+                            Subtitle="Agree to our Transaction Legalese to store and transfer Sovrin Tokens"
+                            Image="sov_token.png"
+                            TappedCommand="{Binding NavigateToTxnAgreement}"
+                        />
+                        <account:AccountMenuButtonView
+                            Title="Legal"
+                            Subtitle="All the cool tech we're using"
+                            Image="legal_icon.png"
+                            TappedCommand="{Binding NavigateToLegalPageCommand}"
+                        />
+                        <account:AccountMenuButtonView
+                            Title="{Binding AppVersion, StringFormat='Version: {0}'}"
+                            Subtitle="{Binding BuildVersion, StringFormat='Build: {0}'}"
+                            Image="info_icon.png"
+                            TappedCommand="{Binding NavigateToDebugCommand}"
+                            NumberOfTapsRequired="8"
+                        />
                     </TableSection>
                 </TableView>
             </StackLayout>

@@ -6,6 +6,7 @@ using Osma.Mobile.App.Services.Interfaces;
 using ReactiveUI;
 using Xamarin.Forms;
 using Xamarin.Essentials;
+using Osma.Mobile.App.Views;
 using Osma.Mobile.App.Views.Legal;
 
 namespace Osma.Mobile.App.ViewModels.Account
@@ -51,6 +52,12 @@ namespace Osma.Mobile.App.ViewModels.Account
             await DialogService.AlertAsync("Navigate to debug page");
         }
 
+        public async Task NavigateToTxnAgreement()
+        {
+            var txnPage = new TxnAgreementPage();
+            await NavigationService.NavigateToAsync(txnPage, NavigationType.Modal);
+        }
+
         #region Bindable Command
 
         public ICommand NavigateToBackupCommand => new Command(async () => await NavigateToBackup());
@@ -60,6 +67,8 @@ namespace Osma.Mobile.App.ViewModels.Account
         public ICommand NavigateToLegalPageCommand => new Command(async () => await NavigateToLegalPage());
 
         public ICommand NavigateToDebugCommand => new Command(async () => await NavigateToDebug());
+
+        public ICommand NavigateTxnAgreement => new Command(async () => await NavigateToTxnAgreement());
 
         #endregion
 
