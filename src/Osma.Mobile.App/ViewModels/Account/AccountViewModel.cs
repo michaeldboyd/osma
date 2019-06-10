@@ -30,7 +30,6 @@ namespace Osma.Mobile.App.ViewModels.Account
 #endif
         }
 
-
         public async Task NavigateToBackup()
         {
             await DialogService.AlertAsync("Navigate to Backup");
@@ -55,7 +54,7 @@ namespace Osma.Mobile.App.ViewModels.Account
         public async Task NavigateToTxnAgreement()
         {
             var txnPage = new TxnAgreementPage();
-            await NavigationService.NavigateToAsync(txnPage, NavigationType.Modal);
+            await NavigationService.NavigateToAsync(txnPage, NavigationType.Normal);
         }
 
         #region Bindable Command
@@ -68,7 +67,7 @@ namespace Osma.Mobile.App.ViewModels.Account
 
         public ICommand NavigateToDebugCommand => new Command(async () => await NavigateToDebug());
 
-        public ICommand NavigateTxnAgreement => new Command(async () => await NavigateToTxnAgreement());
+        public ICommand NavigateToTxnAgreementCommand => new Command(async () => await NavigateToTxnAgreement());
 
         #endregion
 

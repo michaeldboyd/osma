@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
+using Osma.Mobile.App.ViewModels; 
 namespace Osma.Mobile.App.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -8,6 +8,7 @@ namespace Osma.Mobile.App.Views
     {
         public TxnAgreementPage()
         {
+
             InitializeComponent();
         }
     }

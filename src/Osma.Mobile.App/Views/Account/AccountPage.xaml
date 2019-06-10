@@ -36,7 +36,7 @@
                             Title="Enable Sovrin Token Support"
                             Subtitle="Agree to our Transaction Legalese to store and transfer Sovrin Tokens"
                             Image="sov_token.png"
-                            TappedCommand="{Binding NavigateToTxnAgreement}"
+                            TappedCommand="{Binding NavigateToTxnAgreementCommand}"
                         />
                         <account:AccountMenuButtonView
                             Title="Legal"

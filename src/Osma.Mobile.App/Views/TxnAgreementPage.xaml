@@ -1,10 +1,16 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Osma.Mobile.App.Views.TxnAgreementPage">
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Osma.Mobile.App.Views.TxnAgreementPage">
     <ContentPage.Content>
-          <StackLayout>
-             <Label Text="Hello World"/>
-          </StackLayout>
-   </ContentPage.Content>    
+        <StackLayout Spacing="15" VerticalOptions="Center">
+            <Label HorizontalOptions="Center" Margin="10" FontSize="25" Text="Welcome to OSMA!" />
+            <Label HorizontalTextAlignment="Center" Margin="5" Text=" This is the Hyperledger Indy Open Source Mobile Agent. We will continue adding functionality for our app as our protocols progress" />
+            <Label HorizontalOptions="Center" FontSize="20" Text="Txn Agreement" />
+            <Label Margin="10" Text=" In order to use the Sovrin Token, you must agree to let us write a publicly referencable decentralized identifier to the ledger for you." />
+            <StackLayout
+                Orientation="Horizontal" HorizontalOptions="Center">
+                <Button Margin="5" Text="Accept" Command="{Binding AcceptCommand}" />
+                <Button Margin="5" Text="Reject" Command="{Binding RejectCommand}" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

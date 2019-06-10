@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Acr.UserDialogs;
 using AgentFramework.Core.Models.Wallets;
@@ -22,23 +23,16 @@ namespace Osma.Mobile.App.ViewModels
             _agentContextProvider = agentContextProvider;
         }
 
+        public async Task NavigateToMainPage(bool accepted)
+        {
+            await NavigationService.NavigateToAsync<MainViewModel>();
+        }
+
         #region Bindable Commands
-        public ICommand Accept => new Command(async () =>
-        {
-            var dialog = UserDialogs.Instance.Alert("Accepted");
+        public ICommand AcceptCommand => new Command(async () => await NavigateToMainPage(true));
 
-            await NavigationService.NavigateToAsync<MainViewModel>();
-            dialog?.Dispose();
-        });
-
-        public ICommand Reject => new Command(async () =>
-        {
-            var dialog = UserDialogs.Instance.Loading("Rejected");
-
-            await NavigationService.NavigateToAsync<MainViewModel>();
-            dialog?.Dispose();
-
-        });
+        public ICommand RejectCommand => new Command(async () => await NavigateToMainPage(false));
+    
         #endregion
     }
 }
