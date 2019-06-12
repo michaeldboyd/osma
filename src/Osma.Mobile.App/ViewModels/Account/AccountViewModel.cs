@@ -7,6 +7,7 @@ using ReactiveUI;
 using Xamarin.Forms;
 using Xamarin.Essentials;
 using Osma.Mobile.App.Views;
+using Osma.Mobile.App.Views.Account;
 using Osma.Mobile.App.Views.Legal;
 
 namespace Osma.Mobile.App.ViewModels.Account
