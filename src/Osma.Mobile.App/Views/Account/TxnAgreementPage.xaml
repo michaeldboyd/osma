@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Osma.Mobile.App.Views.Account.TxnAgreementPage"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:converters="clr-namespace:Osma.Mobile.App.Converters;assembly=Osma.Mobile.App"
+
+             >
+    <ContentPage.Content>
+        <StackLayout Spacing="15" VerticalOptions="Center">
+            <Label HorizontalOptions="Center" Margin="10" FontSize="25" Text="Welcome to OSMA!" />
+            <Label HorizontalTextAlignment="Center" Margin="5" Text=" This is the Hyperledger Indy Open Source Mobile Agent. We will continue adding functionality for our app as our protocols progress" />
+            <Label HorizontalOptions="Center" FontSize="20" Text="Txn Agreement" />
+            <Label Margin="10" Text="{Binding AgreementContents}"/>
+               <StackLayout
+                Grid.Row="2"
+                Padding="10"
+                Orientation="Horizontal"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
+                <Button
+                    HorizontalOptions="FillAndExpand"
+                    Style="{DynamicResource GreenButtonStyle}"
+                    Command="{Binding AcceptAgreementCommand}"
+                    Text="Agree"/>
+                <Button
+                    Style="{DynamicResource RedButtonStyle}"
+                    Command="{Binding RejectAgreementCommand}"
+                    HorizontalOptions="FillAndExpand"
+                    Text="Reject"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
